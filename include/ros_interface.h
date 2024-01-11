@@ -85,7 +85,7 @@ ROS_Interface::ROS_Interface(ros::NodeHandle &n, double lat, double lon)
     estimated_pose_pub = nh.advertise<nav_msgs::Odometry>("/estimated_pose", 10);
 
     // Subscriber
-    gps_sub = nh.subscribe("/fix", 10, &ROS_Interface::gps_callback, this);
+    gps_sub = nh.subscribe("/ublox/fix", 10, &ROS_Interface::gps_callback, this);
     imu_sub = nh.subscribe("/imu/data", 10, &ROS_Interface::imu_callback, this);
 
     // init gps_path

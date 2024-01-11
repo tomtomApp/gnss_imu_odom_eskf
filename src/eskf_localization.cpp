@@ -23,8 +23,8 @@ int main(int argc, char**argv)
     //double lon0 = 140.07696509173357;
     //double lat0 = 36.08324140969784;
     //double lon0 = 140.07696509173357;
-    double lat0 = 36.08263197663968;
-    double lon0 = 140.07660776463374;
+    double lat0 = 35.7241329;
+    double lon0 = 139.5781121;
 
     // tsukuba parking 1
     //double lat0 = 36.09183981305693;

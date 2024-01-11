@@ -10,8 +10,8 @@ from geometry_msgs.msg import PoseStamped
 class Save_GNSS_Path():
     def __init__(self):
         rospy.init_node("save_gnss_path", anonymous=True)
-        self.savepath_sub = rospy.Subscriber("/gps_pose", PoseStamped, self.gnss_callback)
-
+        self.savepath_sub = rospy.Subscriber("/gnss_pose", PoseStamped, self.gnss_callback)
+        print('gnss Data:',self.savepath_sub)
         # pre odometry
         self.pre_x = 0.0 #[m]
         self.pre_y = 0.0 #[m]
@@ -36,6 +36,7 @@ class Save_GNSS_Path():
             # save pre_position
             self.pre_x = gnss.pose.position.x
             self.pre_y = gnss.pose.position.y
+            print(current_point)
         else:
             pass
     """
@@ -51,10 +52,11 @@ class Save_GNSS_Path():
         self.path_dict[len(self.path_dict)] = current_point
     """
     def save_csv(self):
-        # Save CSV path file
+        # Save CSV path fileSave CSV path file
+        print("Save CSV path file")
         cols = ["x", "y", "z", "w0", "w1", "w2", "w3"]
         df = pd.DataFrame.from_dict(self.path_dict, orient='index',columns=cols)
-        df.to_csv("~/catkin_ws/src/gnss_imu_odom_ESKF/gnss_path/gnss_log_data1.csv", index=False)
+        df.to_csv("~/catkin_ws/src/gnss_imu_odom_eskf/gnss_path/gnss_log_test1.csv", index=False)
 
 if __name__ == '__main__':
     print('Save Path is Started...')

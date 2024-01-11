@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(gnss_imu_odom_ESKF)
+project(gnss_imu_odom_eskf)
 
 find_package(catkin REQUIRED
     roscpp

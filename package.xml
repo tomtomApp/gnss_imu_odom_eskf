@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>gnss_imu_odom_ESKF</name>
+  <name>gnss_imu_odom_eskf</name>
   <version>0.0.0</version>
-  <description>The gnss_imu_odom_ESKF package</description>
+  <description>The gnss_imu_odom_eskf package</description>
 
   <maintainer email="ubuntu@todo.todo">ubuntu</maintainer>
 
